@@ -10,7 +10,7 @@ namespace Startliste
         static void Main(string[] args)
         {
             var clubList = new List<Club>();
-            foreach (var line in File.ReadLines("startlist.csv"))
+            foreach (var line in File.ReadLines("startlist.csv").Skip(1))
             {
                 var participant = new Registration(line);
                 var club = FindMatchingClub(participant, clubList) ?? AddNewClubb(participant, clubList);
